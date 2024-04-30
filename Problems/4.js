@@ -15,6 +15,14 @@
 // Merge: We merge the two sorted sublists into a single sorted list.[3, 9, 10, 27, 38, 43, 82]
 // This sorted list is the result of applying merge sort to the initial array [38, 27, 43, 3, 9, 82, 10]. The time complexity of merge sort in this case is O(n log n), where n is the number of elements in the array.
 
+// Properties of merge sort algorithms:-
+
+// 1. Divide and conquer
+// 2. Recursive
+// 3. stable sorting algorithms
+// 4. Not In-place  - o(n) space complexity
+// 5. o(nlogn) time complexity 
+
 
 function mergeSort(arr) {
     if (arr.length <= 1) {
