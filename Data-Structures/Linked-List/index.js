@@ -7,6 +7,8 @@ class List {
     this.tail = this.head;
     this.size = 1;
   }
+
+  // Appending Node
   appenNode(nodeData) {
     let newNode = {
       value: nodeData,
@@ -16,30 +18,48 @@ class List {
     this.tail = newNode;
     this.size += 1;
   }
+
+  // Traversing Node
   traversing() {
     let counter = 0;
     let currentNode = this.head;
     while (counter < this.size) {
       // console.log(currentNode);
-      currentNode=currentNode.next;
+      currentNode = currentNode.next;
       counter++;
     }
   }
 
-  deleteNode(index){
-     let counter = 1;
-     let lead = this.head;
-     if(index===1){
-        this.head= this.head.next;
-     } else{
-      while(counter<index-1){
-        lead=lead.next;
+  // Deleting Node
+  deleteNode(index) {
+    let counter = 1;
+    let lead = this.head;
+    if (index === 1) {
+      this.head = this.head.next;
+    } else {
+      while (counter < index - 1) {
+        lead = lead.next;
         counter++;
       }
       let nextNode = lead.next.next;
       lead.next = nextNode;
       console.log(lead);
-     }
+    }
+  }
+
+  // Inserting Node
+  insertNode(index, value) {
+    let counter = 1;
+    let currentNode = this.head;
+    while (counter > index) {
+      counter++;
+      currentNode = currentNode.next;
+    }
+    let nextNode = currentNode.next;
+    currentNode.next = {
+      value: value,
+      next: nextNode,
+    };
   }
 }
 let list = new List(200);
@@ -47,8 +67,9 @@ list.appenNode(300);
 list.appenNode(400);
 list.appenNode(500);
 list.appenNode(600);
-list.appenNode(700)
-list.traversing();
-list.deleteNode(4);
+list.appenNode(700);
+// list.traversing();
+// list.deleteNode(4);
+list.insertNode(3, 4000);
 
 console.log(list);
