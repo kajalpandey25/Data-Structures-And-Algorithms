@@ -61,6 +61,24 @@ class List {
       next: nextNode,
     };
   }
+
+  // Searching Node
+  searchNode(data){
+    let result = undefined;
+    let lead = this.head;
+    let loop = true;
+    while(loop){
+      lead=lead.next;
+      // console.log(lead);
+      loop = !!lead;
+      if(loop && lead.value === data){
+        loop=false;
+        result=lead;
+      }
+
+    }
+    console.log(result);
+  }
 }
 let list = new List(200);
 list.appenNode(300);
@@ -70,6 +88,7 @@ list.appenNode(600);
 list.appenNode(700);
 // list.traversing();
 // list.deleteNode(4);
-list.insertNode(3, 4000);
+// list.insertNode(3, 4000);
+list.searchNode(600);
 
 console.log(list);
