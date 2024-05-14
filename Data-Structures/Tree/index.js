@@ -29,12 +29,25 @@ class BSTree {
       } else {
         this.insertNode(root.left, newNode);
       }
-    }else{
-      if(root.left === null){
-        root.left = newNode;
-      }else{
-        this.insertNode(root.right, newNode)
+    } else {
+      if (root.right === null) {
+        root.right = newNode;
+      } else {
+        this.insertNode(root.right, newNode);
       }
+    }
+  }
+
+  // Searching Node
+  search(root, val) {
+    if ((root === null)) {
+      return false;
+    }else if(root.value===val){
+      return true;
+    }else if(root.value>val){
+      return this.search(root.left, val)
+    }else{
+      return this.search(root.right, val)
     }
   }
 }
@@ -42,4 +55,7 @@ let bst = new BSTree();
 bst.makeTree(20);
 bst.makeTree(10);
 bst.makeTree(5);
-console.log(bst);
+bst.makeTree(30);
+bst.makeTree(40);
+console.log(bst.search(bst.root, 11));
+// console.log(bst.root);
