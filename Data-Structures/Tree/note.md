@@ -16,3 +16,9 @@
 
 
 # Depth First Search in Tree
+1. Traversing tree
+2. PreOder
+3.InOrder
+4. PostOrder
+
+# Breadth First Search in Tree

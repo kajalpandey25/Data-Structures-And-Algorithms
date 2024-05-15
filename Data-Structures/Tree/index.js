@@ -77,6 +77,40 @@ class BSTree {
       console.log(root.value);
     }
   }
+
+  // breath first search
+  bfsTraversing(root) {
+    let queue = [];
+    queue.push(this.root);
+    while (queue.length) {
+      let current = queue.shift();
+      if (current.left) {
+        queue.push(current.left);
+      }
+      if (current.right) {
+        queue.push(current.right);
+      }
+      console.log(current.value);
+    }
+  }
+
+  // Min Value
+  minValue(root) {
+    if (!root.left) {
+      return root.value;
+    } else {
+      return this.minValue(root.left);
+    }
+  }
+
+  // Max Value
+  maxValue(root) {
+    if (!root.right) {
+      return root.value;
+    } else {
+      return this.maxValue(root.right);
+    }
+  }
 }
 
 let bst = new BSTree();
@@ -89,6 +123,9 @@ bst.makeTree(40);
 bst.makeTree(23);
 // bst.preOrder(bst.root);
 // bst.inOrder(bst.root);
-bst.postOrder(bst.root);
+// bst.postOrder(bst.root);
 // console.log(bst.search(bst.root, 11));
-console.log(bst.root);
+// bst.bfsTraversing(bst.root);
+// console.log(bst.minValue(bst.root));
+console.log(bst.maxValue(bst.root));
+// console.log(bst.root);
