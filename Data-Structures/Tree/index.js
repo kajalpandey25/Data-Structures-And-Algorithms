@@ -111,6 +111,32 @@ class BSTree {
       return this.maxValue(root.right);
     }
   }
+
+  // Remove Value
+  removeData(value) {
+    this.root = this.deleteNode(this.root, value);
+  }
+  deleteNode(root, value) {
+    if (root === null) {
+      return null;
+    }
+    if (value < root.value) {
+      root.left = this.deleteNode(root.left, value);
+    } else if (value > root.value) {
+      root.right = this.deleteNode(root.right, value);
+    } else {
+      if (!this.root.left && !this.root.right) {
+        return null;
+      } else if (!root.left) {
+        return root.right;
+      } else if (!root.right) {
+        return root.left;
+      }
+      root.value = this.minValue(root.right);
+      root.right = this.deleteNode(root.right, root.value);
+    }
+    return root;
+  }
 }
 
 let bst = new BSTree();
@@ -127,5 +153,8 @@ bst.makeTree(23);
 // console.log(bst.search(bst.root, 11));
 // bst.bfsTraversing(bst.root);
 // console.log(bst.minValue(bst.root));
-console.log(bst.maxValue(bst.root));
+// console.log(bst.maxValue(bst.root));
 // console.log(bst.root);
+bst.removeData(20);
+// bst.bfsTraversing(bst.root);
+console.log(bst.root);
