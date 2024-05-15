@@ -40,22 +40,55 @@ class BSTree {
 
   // Searching Node
   search(root, val) {
-    if ((root === null)) {
+    if (root === null) {
       return false;
-    }else if(root.value===val){
+    } else if (root.value === val) {
       return true;
-    }else if(root.value>val){
-      return this.search(root.left, val)
-    }else{
-      return this.search(root.right, val)
+    } else if (root.value > val) {
+      return this.search(root.left, val);
+    } else {
+      return this.search(root.right, val);
+    }
+  }
+
+  //PreOrder
+  preOrder(root) {
+    if (root) {
+      console.log(root.value);
+      this.preOrder(root.left);
+      this.preOrder(root.right);
+    }
+  }
+
+  // InOrder
+  inOrder(root) {
+    if (root) {
+      this.inOrder(root.left);
+      console.log(root.value);
+      this.inOrder(root.right);
+    }
+  }
+
+  // PostOrder       [Left, right, root]
+  postOrder(root) {
+    if (root) {
+      this.postOrder(root.left);
+      this.postOrder(root.right);
+      console.log(root.value);
     }
   }
 }
+
 let bst = new BSTree();
 bst.makeTree(20);
 bst.makeTree(10);
 bst.makeTree(5);
+bst.makeTree(11);
 bst.makeTree(30);
 bst.makeTree(40);
-console.log(bst.search(bst.root, 11));
-// console.log(bst.root);
+bst.makeTree(23);
+// bst.preOrder(bst.root);
+// bst.inOrder(bst.root);
+bst.postOrder(bst.root);
+// console.log(bst.search(bst.root, 11));
+console.log(bst.root);

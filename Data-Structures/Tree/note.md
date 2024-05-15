@@ -13,3 +13,6 @@
 # 4. Leaf Node: A node with no children.
 
 # 5. Binary Search Tree (BST): A specific type of binary tree where the values of nodes in the left subtree are less than the value of the parent node, and the values of nodes in the right subtree are greater than the value of the parent node. This property facilitates efficient searching, insertion, and deletion , Traversal operations.
+
+
+# Depth First Search in Tree
