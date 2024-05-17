@@ -1,0 +1,1 @@
+# Recursion is a programming technique where a function calls itself in order to solve a problem. This approach is particularly useful for problems that can be broken down into smaller, simpler subproblems of the same type.
