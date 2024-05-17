@@ -7,3 +7,4 @@ let adjList={
 
 // console.log(adjList.a[0]);
 console.log(adjList.c);
+
