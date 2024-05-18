@@ -30,5 +30,38 @@ function rangeOfNumbers(startNum, endNum) {
 // Q 3 : Given an integer x, return true if x is a palinfrome, and false otherwise.
 // Input : X = 121   ------------>>>>>>>> output : true;
 
+function isPalindrome(x) {
+  // Convert the integer to a string
+  const str = x.toString();
+
+  // Recursive function to check palindrome
+  function checkPalindrome(s, start, end) {
+      // Base case: if start index is greater than or equal to end index
+      if (start >= end) {
+          return true;
+      }
+      // Check the first and last characters
+      if (s[start] !== s[end]) {
+          return false;
+      }
+      // Recursive call
+      return checkPalindrome(s, start + 1, end - 1);
+  }
+
+  // Start the recursion from the first and last characters of the string
+  return checkPalindrome(str, 0, str.length - 1);
+}
+
+// Example usage
+const x = 121;
+console.log(isPalindrome(x)); // Output: true
+
+const y = -121;
+console.log(isPalindrome(y)); // Output: false
+
+const z = 10;
+console.log(isPalindrome(z)); // Output: false
+
+
 
 
