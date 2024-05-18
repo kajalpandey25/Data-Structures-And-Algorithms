@@ -9,17 +9,26 @@ function factorial(n) {
   } else return n * factorial(n - 1);
 }
 
-console.log(factorial(5));
+// console.log(factorial(5));
 
 // Q 2 : Create an array with range of numbers
 // Input: start - 1, end - 5 -------->>>>> Output:
 
 function rangeOfNumbers(startNum, endNum) {
-    if(endNum<startNum){
-        return [];
-    } else{
-        const numbers = rangeOfNumbers(startNum, endNum -1 );
-    }
+  if (endNum < startNum) {
+    return [];
+  } else {
+    const numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
+  }
 }
 
-console.log(rangeOfNumbers(0, 5));
+// console.log(rangeOfNumbers(0, 5));
+
+
+// Q 3 : Given an integer x, return true if x is a palinfrome, and false otherwise.
+// Input : X = 121   ------------>>>>>>>> output : true;
+
+
+
