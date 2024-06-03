@@ -7,5 +7,3 @@ function simplePromise() {
 }
 
 simplePromise().then(console.log); // Output after 1 second: 'Resolved!'
-
-
