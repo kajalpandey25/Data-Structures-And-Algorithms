@@ -92,3 +92,6 @@ list.appenNode(700);
 list.searchNode(600);
 
 console.log(list);
+
+
+
